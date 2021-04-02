@@ -6,11 +6,11 @@ public class Main {
         };
 
 
-
+/*
 
         System.out.println(lader.getBetriebsstunden());
         lader.laden();
-        System.out.println(lader.getBetriebsstunden());
+        System.out.println(lader.getBetriebsstunden());*/
 
         Bagger bagger = new BaggerImpl("Name2", 2,5,3,5) {
         };
@@ -24,8 +24,16 @@ public class Main {
         System.out.println(bagger.getBetriebsstunden());
 */
 
-        bagger.druckeBeschreibung();
-        lader.druckeBeschreibung();
+       /* bagger.druckeBeschreibung();
+        lader.druckeBeschreibung();*/
+
+
+        BaggerLadder baggerLadder = new BaggerLadder("Name3", 20, 10, 15, 10, 10, 5){};
+        System.out.println(baggerLadder.getBetriebsstunden());
+        baggerLadder.laden();
+        baggerLadder.graben();
+        baggerLadder.laden();
+        System.out.println(baggerLadder.getBetriebsstunden());
 
 
 

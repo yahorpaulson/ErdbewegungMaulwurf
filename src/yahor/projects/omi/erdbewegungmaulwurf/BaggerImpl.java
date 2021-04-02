@@ -11,6 +11,8 @@ public abstract class BaggerImpl extends BaummachineImpl implements Bagger{
         super(name, gewicht, leistung);
         this.grabtiefe = grabtiefe;
         this.reichweite = reichweite;
+        setGrabtiefe(grabtiefe);
+        setReichweite(reichweite);
     }
 
 
