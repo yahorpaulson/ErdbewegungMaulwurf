@@ -8,10 +8,10 @@ public class BaggerLadder extends BaummachineImpl implements Bagger, Lader{
 
     public BaggerLadder(String name, double gewicht, int leistung, double grabtiefe, double reichweite, double schaufelvolumen, double kipphoehe) {
         super(name, gewicht, leistung);
-        this.schaufelvolumen = schaufelvolumen;
-        this.kipphoehe = kipphoehe;
-        this.grabtiefe = grabtiefe;
-        this.reichweite = reichweite;
+        setSchaufelvolumen(schaufelvolumen);
+        setKipphoehe(kipphoehe);
+        setGrabtiefe(grabtiefe);
+        setReichweite(reichweite);
     }
 
     @Override
