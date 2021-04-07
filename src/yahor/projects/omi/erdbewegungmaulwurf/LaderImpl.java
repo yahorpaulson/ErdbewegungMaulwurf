@@ -8,8 +8,8 @@ public abstract class LaderImpl extends BaummachineImpl implements Lader{
 
     public LaderImpl(String name, double gewicht, int leistung, double kipphoehe, double schaufelvolumen) {
         super(name, gewicht, leistung);
-        this.schaufelvolumen = schaufelvolumen;
-        this.kipphoehe = kipphoehe;
+        setSchaufelvolumen(schaufelvolumen);
+        setKipphoehe(kipphoehe);
     }
 
 
@@ -37,7 +37,7 @@ public abstract class LaderImpl extends BaummachineImpl implements Lader{
 
     @Override
     public double getBetriebsstunden() {
-        return this.betriebstunden;
+        return super.betriebstunden;
     }
 
     @Override
@@ -51,22 +51,15 @@ public abstract class LaderImpl extends BaummachineImpl implements Lader{
 
     @Override
     public void druckeBeschreibung() {
+        super.druckeBeschreibung();
         System.out.println(
-                "Name: " + getName() + "\n" +
-                "Gewicht: " + getGewicht() + "\n" +
-                "Leistung: " + getLeistung() + "\n" +
-                "Betriebsstunden: " + getBetriebsstunden() + "\n" +
-                "Kipphöhe: " + getKipphoehe() + "\n" +
-                "Schaufelvolumen: " +getSchaufelvolumen() + "\n" +
+                "Kipphöhe: " + this.kipphoehe + "\n" +
+                "Schaufelvolumen: " +this.schaufelvolumen + "\n" +
                         "**********************************"
         );
 
     }
 
-
-
     @Override
-    public void laden() {
-        this.betriebstunden++;
-    }
+    public void laden() { super.betriebstunden++; }
 }

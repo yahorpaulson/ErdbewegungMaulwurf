@@ -9,8 +9,6 @@ public abstract class BaggerImpl extends BaummachineImpl implements Bagger{
 
     public BaggerImpl(String name, double gewicht, int leistung, double grabtiefe, double reichweite) {
         super(name, gewicht, leistung);
-        this.grabtiefe = grabtiefe;
-        this.reichweite = reichweite;
         setGrabtiefe(grabtiefe);
         setReichweite(reichweite);
     }
@@ -36,7 +34,7 @@ public abstract class BaggerImpl extends BaummachineImpl implements Bagger{
 
     @Override
     public double getBetriebsstunden() {
-        return this.betriebstunden;
+        return super.betriebstunden;
     }
 
     @Override
@@ -54,11 +52,8 @@ public abstract class BaggerImpl extends BaummachineImpl implements Bagger{
 
     @Override
     public void druckeBeschreibung() {
+        super.druckeBeschreibung();
         System.out.println(
-                "Name: " + getName() + "\n" +
-                        "Gewicht: " + getGewicht() + "\n" +
-                        "Leistung: " + getLeistung() + "\n" +
-                        "Betriebsstunden: " + getBetriebsstunden() + "\n" +
                         "Grabtiefe: " + getGrabtiefe() + "\n" +
                         "Reichweith: " + getReichweite() + "\n" +
                         "**********************************"

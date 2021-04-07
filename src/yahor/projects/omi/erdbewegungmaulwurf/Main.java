@@ -2,38 +2,56 @@ package yahor.projects.omi.erdbewegungmaulwurf;
 
 public class Main {
     public static void main(String[] args) {
-        LaderImpl lader = new LaderImpl("Name1", 2,4,1,4) {
+
+        /**
+         * LADER
+         */
+        LaderImpl lader = new LaderImpl(
+                "This is Lader-------->",
+                2,
+                4,
+                4,
+                4) {
         };
 
-
-/*
-
-        System.out.println(lader.getBetriebsstunden());
         lader.laden();
-        System.out.println(lader.getBetriebsstunden());*/
+        lader.druckeBeschreibung();
 
-        Bagger bagger = new BaggerImpl("Name2", 2,5,3,5) {
+        /**
+         * BAGGER
+         */
+
+        BaggerImpl bagger = new BaggerImpl("This is Bagger--------->",
+                4,
+                5,
+                9,
+                5
+                ) {
         };
-/*
 
 
-
-        System.out.println(bagger.getBetriebsstunden());
         bagger.graben();
         bagger.graben();
-        System.out.println(bagger.getBetriebsstunden());
-*/
+        bagger.druckeBeschreibung();
 
-       /* bagger.druckeBeschreibung();
-        lader.druckeBeschreibung();*/
+        /**
+         * LADERBAGGER
+         */
 
+        BaggerLadder baggerLadder = new BaggerLadder(
+                "This is Bagger---------->",
+                20,
+                10,
+                15,
+                10,
+                10,
+                5
+        );
 
-        BaggerLadder baggerLadder = new BaggerLadder("Name3", 20, 10, 15, 10, 10, 5){};
-        System.out.println(baggerLadder.getBetriebsstunden());
         baggerLadder.laden();
         baggerLadder.graben();
-        baggerLadder.laden();
-        System.out.println(baggerLadder.getBetriebsstunden());
+
+        baggerLadder.druckeBeschreibung();
 
 
 

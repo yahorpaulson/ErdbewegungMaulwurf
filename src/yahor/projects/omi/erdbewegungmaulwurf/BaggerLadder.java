@@ -1,13 +1,17 @@
 package yahor.projects.omi.erdbewegungmaulwurf;
 
-public class BaggerLadder extends BaggerImpl implements IBaggerLader{
+public class BaggerLadder extends BaummachineImpl implements Bagger, Lader{
     private double schaufelvolumen;
     private double kipphoehe;
+    private double grabtiefe;
+    private double reichweite;
 
     public BaggerLadder(String name, double gewicht, int leistung, double grabtiefe, double reichweite, double schaufelvolumen, double kipphoehe) {
-        super(name, gewicht, leistung, grabtiefe, reichweite);
-        this.schaufelvolumen = getSchaufelvolumen();
-        this.kipphoehe = getKipphoehe();
+        super(name, gewicht, leistung);
+        this.schaufelvolumen = schaufelvolumen;
+        this.kipphoehe = kipphoehe;
+        this.grabtiefe = grabtiefe;
+        this.reichweite = reichweite;
     }
 
     @Override
@@ -36,23 +40,50 @@ public class BaggerLadder extends BaggerImpl implements IBaggerLader{
             this.kipphoehe = kipphoehe;
     }
 
+
+
     @Override
-    public void laden() {
-        this.betriebstunden++;
+    public double getGrabtiefe() {
+        return this.reichweite;
     }
 
     @Override
+    public void setGrabtiefe(double grabtiefe) {
+        this.grabtiefe = grabtiefe;
+    }
+
+    @Override
+    public double getReichweite() {
+        return this.reichweite;
+    }
+
+    @Override
+    public void setReichweite(double reichweite) {
+        this.reichweite = reichweite;
+    }
+
+
+    /** Methods of BaggerLader
+     *
+     */
+    @Override
+    public void graben() { super.betriebstunden++; }
+
+    @Override
+    public void laden() {
+        super.betriebstunden++;
+    }
+    @Override
     public void druckeBeschreibung(){
+        super.druckeBeschreibung();
         System.out.println(
-                "Name: " + getName() + "\n" +
-                        "Gewicht: " + getGewicht() + "\n" +
-                        "Leistung: " + getLeistung() + "\n" +
-                        "Betriebsstunden: " + getBetriebsstunden() + "\n" +
-                        "Grabtiefe: " + getGrabtiefe() + "\n" +
-                        "Reichweith: " + getReichweite() + "\n" +
-                        "Kipphöhe: " + getKipphoehe() + "\n" +
-                        "Schaufelvolumen" + getSchaufelvolumen() + "\n" +
+                        "Grabtiefe: " + this.grabtiefe + "\n" +
+                        "Reichweith: " + this.reichweite + "\n" +
+                        "Kipphöhe: " + this.kipphoehe + "\n" +
+                        "Schaufelvolumen " + this.schaufelvolumen + "\n" +
                         "**********************************"
         );
     }
+
+
 }
