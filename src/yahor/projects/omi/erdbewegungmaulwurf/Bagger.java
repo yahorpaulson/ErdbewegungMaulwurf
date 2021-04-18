@@ -8,6 +8,14 @@ public interface Bagger extends  Baumaschine{
     void setGrabtiefe(double grabtiefe);
     double getReichweite();
     void setReichweite (double reichweite);
-    void druckeBeschreibung();
+
+    default void druckeBeschreibung() {
+        System.out.println(
+                "Grabtiefe: " + getGrabtiefe() + "\n" +
+                "Reichweith: " + getReichweite() + "\n" +
+                "**********************************"
+        );
+    }
+
     void graben();
 }

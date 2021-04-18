@@ -8,6 +8,14 @@ public interface Lader extends Baumaschine{
     void setSchaufelvolumen(double schaufelvolumen);
     double getKipphoehe();
     void setKipphoehe(double kipphoehe);
-    void druckeBeschreibung();
+
+    default void druckeBeschreibung() {
+        System.out.println(
+                "Kipphöhe: " + getKipphoehe() + "\n" +
+                "Schaufelvolumen: " +getSchaufelvolumen() + "\n" +
+                "**********************************"
+        );
+    }
+
     void laden();
 }

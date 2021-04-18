@@ -39,7 +39,7 @@ public class Main {
          */
 
         BaggerLadder baggerLadder = new BaggerLadder(
-                "This is Bagger---------->",
+                "This is BaggerLader---------->",
                 20,
                 10,
                 15,
@@ -52,6 +52,10 @@ public class Main {
         baggerLadder.graben();
 
         baggerLadder.druckeBeschreibung();
+
+
+        NextClass next = new NextClass();
+        next.druckeBeschreibung();
 
 
 

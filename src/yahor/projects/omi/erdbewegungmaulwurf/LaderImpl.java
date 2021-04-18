@@ -52,11 +52,7 @@ public abstract class LaderImpl extends BaummachineImpl implements Lader{
     @Override
     public void druckeBeschreibung() {
         super.druckeBeschreibung();
-        System.out.println(
-                "Kipphöhe: " + this.kipphoehe + "\n" +
-                "Schaufelvolumen: " +this.schaufelvolumen + "\n" +
-                        "**********************************"
-        );
+        Lader.super.druckeBeschreibung();
 
     }
 

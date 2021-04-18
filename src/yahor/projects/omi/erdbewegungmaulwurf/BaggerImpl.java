@@ -50,14 +50,10 @@ public abstract class BaggerImpl extends BaummachineImpl implements Bagger{
      */
 
 
-    @Override
+
     public void druckeBeschreibung() {
         super.druckeBeschreibung();
-        System.out.println(
-                        "Grabtiefe: " + getGrabtiefe() + "\n" +
-                        "Reichweith: " + getReichweite() + "\n" +
-                        "**********************************"
-        );
+        Bagger.super.druckeBeschreibung();
     }
 
     @Override
